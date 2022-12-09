@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - prints all digitsi of base ten
- * starting from zero
- * followed by a new line
+ * main - prints all single digit numbers of base 10 starting from
+ * followed by a new line, using putchar
  * Return: Always 0 (success)
  */
 int main(void)
@@ -14,6 +13,6 @@ int main(void)
 	{
 		putchar(n);
 	}
-	printf("\n");
+	putchar("\n");
 	return (0);
 }
