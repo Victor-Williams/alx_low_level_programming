@@ -1,22 +1,31 @@
 include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+
 /**
-* main - print the multiplication of two nums
-* @argc: argument count
-* @argv: argument vector
-* Return: 0 -if it works, 1 - fails
-*/
+ * main - adds positive numbers.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
+ */
+
 int main(int argc, char *argv[])
 {
-	(void) argc;
+	int i, j, add = 0;
 
-	if (argv[1]  && argv[2])
+	for (i = 1; i < argc; i++)
 	{
-		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
-		return (0);
-	}
-	else
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+		if (!isdigit(argv[i][j]))
+		{
 		printf("Error\n");
-	return (1);
+		return (1);
+		}
+		}
+		add += atoi(argv[i]);
+	}
+	printf("%d\n", add);
+	return (0);
 }
